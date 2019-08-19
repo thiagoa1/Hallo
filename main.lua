@@ -19,7 +19,7 @@ local platform = display.newImageRect( "platform.png", 300, 50 )
 platform.x = display.contentCenterX
 platform.y = display.contentHeight-25
 
-local char = display.newImageRect("adventurer-idle-00.png", 100, 74)
+local char = display.newImageRect("dancer.png", 85, 145)
 char.x = display.contentCenterX
 char.y = display.contentHeight-30
 
