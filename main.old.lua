@@ -19,20 +19,26 @@ local platform = display.newImageRect( "platform.png", 300, 50 )
 platform.x = display.contentCenterX
 platform.y = display.contentHeight-25
 
-local char = display.newImageRect("adventurer-idle-00.png", 100, 74)
-char.x = display.contentCenterX
-char.y = display.contentHeight-30
-
+--local balloon = display.newImageRect( "balloon.png", 112, 112 )
+-- Alterei aqui o asset para uma bomba
+local balloon = display.newImageRect( "bomb_PNG40.png", 112, 112 )
+balloon.x = display.contentCenterX
+balloon.y = display.contentCenterY
+balloon.alpha = 0.8
 
 local physics = require( "physics" )
 physics.start()
 
 physics.addBody( platform, "static" )
 -- Adicionei o atrito
-physics.addBody( char, "dynamic", { radius=50, bounce=0.0 } )
+physics.addBody( balloon, "dynamic", {friction = 10, radius=50, bounce=0.25 } )
 
-local function jump()
-    char:applyLinearImpulse( 0, -0.75, char.x, char.y)
+local function pushBalloon()
+    -- Aplique uma força no x que faz o asset girar
+    balloon:applyLinearImpulse( 0, -0.75, balloon.x - 5, balloon.y)
+    --balloon:applyAngularImpulse( 100 )
+    tapCount = tapCount + 1
+    tapText.text = tapCount
 end
 
-char:addEventListener( "tap", jump )
+balloon:addEventListener( "tap", pushBalloon )
