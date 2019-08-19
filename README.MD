@@ -26,3 +26,11 @@ O jogador deverá tocar os botões no ritmo indicado para que Marshall realize a
 
 ## Controles
 O jogo é controlado por toques na tela em lugares específicos.    
+
+## Desenho conceitual
+
+![Desenho Conceitual](https://raw.githubusercontent.com/thiagoa1/Hallo/master/Desenho%201.png)  
+
+## Tela conceitual
+
+![Tela Conceitual](https://raw.githubusercontent.com/thiagoa1/Hallo/master/ritmo%20-%20mockup.png)  
